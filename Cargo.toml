@@ -1,0 +1,15 @@
+[package]
+name = "podping-schemas"
+version = "1.0.0"
+authors = ["Alecks Gates"]
+edition = "2021"
+build = "build.rs"
+
+
+[dependencies]
+capnp = "0.19.6"
+serde = { version = "1.0.203", features = ["derive"] }
+
+[build-dependencies]
+capnpc = "0.19.0"
+globmatch = "0.3.0"

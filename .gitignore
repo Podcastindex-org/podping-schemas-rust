@@ -1,0 +1,12 @@
+src/**/*.capnp
+src/**/*.json
+
+# VSCode
+.vscode
+
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+target
