@@ -13,15 +13,17 @@ fn main() {
                 .flatten()
                 .collect();
 
-            let mut capnp_command = capnpc::CompilerCommand::new();
-            let mut capnp_command_builder = capnp_command.src_prefix("src").output_path("src").import_path("src");
+            if paths.len() > 0 {
+                let mut capnp_command = capnpc::CompilerCommand::new();
+                let mut capnp_command_builder = capnp_command.src_prefix("src").output_path("src").import_path("src");
 
-            for path in paths {
-                println!("{}", path.to_str().unwrap());
-                capnp_command_builder = capnp_command_builder.file(path);
+                for path in paths {
+                    println!("{}", path.to_str().unwrap());
+                    capnp_command_builder = capnp_command_builder.file(path);
+                }
+
+                capnp_command_builder.run().expect("schema compiler command");
             }
-
-            capnp_command_builder.run().expect("schema compiler command");
         }
         Err(_) => {}
     }
