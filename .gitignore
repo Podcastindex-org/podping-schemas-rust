@@ -1,4 +1,4 @@
-src/**/*.capnp
+#src/**/*.capnp
 src/**/*.json
 
 # VSCode
