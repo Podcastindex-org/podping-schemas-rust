@@ -1,11 +1,11 @@
 @0x9b917b91f85f5cc2;
 
-using Rust = import "rust.capnp";
+using Rust = import "../../../rust.capnp";
 
 $Rust.parentModule("org::podcastindex::podping");
 
-using import "./podping_medium.capnp".PodpingMedium;
-using import "./podping_reason.capnp".PodpingReason;
+using import "../../../org/podcastindex/podping/podping_medium.capnp".PodpingMedium;
+using import "../../../org/podcastindex/podping/podping_reason.capnp".PodpingReason;
 
 struct PodpingWrite {
     medium @0 :PodpingMedium;

@@ -1,6 +1,6 @@
 @0xedda8f1fc8b626fe;
 
-using Rust = import "rust.capnp";
+using Rust = import "../../../rust.capnp";
 
 $Rust.parentModule("org::podcastindex::podping");
 
@@ -27,4 +27,10 @@ enum PodpingMedium {
 
     blog @13;
     blogL @14;
+
+    publisher @15;
+    publisherL @16;
+
+    course @17;
+    courseL @18;
 }

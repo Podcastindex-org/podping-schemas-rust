@@ -213,7 +213,11 @@ impl std::convert::TryFrom<String> for MediumsV10 {
 #[doc = "    \"filmL\","]
 #[doc = "    \"audiobookL\","]
 #[doc = "    \"newsletterL\","]
-#[doc = "    \"blogL\""]
+#[doc = "    \"blogL\","]
+#[doc = "    \"publisher\","]
+#[doc = "    \"publisherL\","]
+#[doc = "    \"course\","]
+#[doc = "    \"courseL\""]
 #[doc = "  ]"]
 #[doc = "}"]
 #[doc = r" ```"]
@@ -236,6 +240,14 @@ pub enum MediumsV11 {
     NewsletterL,
     #[serde(rename = "blogL")]
     BlogL,
+    #[serde(rename = "publisher")]
+    Publisher,
+    #[serde(rename = "publisherL")]
+    PublisherL,
+    #[serde(rename = "course")]
+    Course,
+    #[serde(rename = "courseL")]
+    CourseL,
 }
 impl From<&MediumsV11> for MediumsV11 {
     fn from(value: &MediumsV11) -> Self {
@@ -253,6 +265,10 @@ impl ToString for MediumsV11 {
             Self::AudiobookL => "audiobookL".to_string(),
             Self::NewsletterL => "newsletterL".to_string(),
             Self::BlogL => "blogL".to_string(),
+            Self::Publisher => "publisher".to_string(),
+            Self::PublisherL => "publisherL".to_string(),
+            Self::Course => "course".to_string(),
+            Self::CourseL => "courseL".to_string(),
         }
     }
 }
@@ -268,6 +284,10 @@ impl std::str::FromStr for MediumsV11 {
             "audiobookL" => Ok(Self::AudiobookL),
             "newsletterL" => Ok(Self::NewsletterL),
             "blogL" => Ok(Self::BlogL),
+            "publisher" => Ok(Self::Publisher),
+            "publisherL" => Ok(Self::PublisherL),
+            "course" => Ok(Self::Course),
+            "courseL" => Ok(Self::CourseL),
             _ => Err("invalid value".into()),
         }
     }

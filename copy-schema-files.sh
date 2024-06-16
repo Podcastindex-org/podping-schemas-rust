@@ -25,7 +25,7 @@ for file in "${package_path}"/**/*.capnp; do
 
     file_dir=$(dirname "$file")
 
-    mapfile -t file_imports < <(grep -oP 'using import "\K[^"].*?(?=\/[^\/]*\.capnp)' "$file" | uniq)
+    mapfile -t file_imports < <(grep -oP 'using ([a-zA-Z]* = )?import "\K[^"].*?(?=\/[^\/]*\.capnp)' "$file" | uniq)
 
     for import_dir in "${file_imports[@]}"
     do
